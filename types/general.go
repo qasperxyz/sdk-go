@@ -1,10 +1,5 @@
 package types
 
-type ApplicationErrorResponse struct {
-	Status  int    `json:"status"`
-	Message string `json:"message"`
-}
-
 type Response struct {
 	Messages []Message `json:"messages"`
 	Columns  []Column  `json:"columns"`
