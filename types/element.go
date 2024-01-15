@@ -25,7 +25,7 @@ func (h *ElementBuilder) AddElement(el Element) *ElementBuilder {
 	return h
 }
 
-func (h *ElementBuilder) AddField(columnId string, value string) *ElementBuilder {
+func (h *ElementBuilder) AddField(columnId string, value any) *ElementBuilder {
 	h.element.Value[columnId] = value
 	return h
 }

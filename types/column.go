@@ -12,6 +12,7 @@ const (
 	Boolean   string = "Boolean"
 	Date      string = "Date"
 	TimeStamp string = "TimeStamp"
+	List      string = "List"
 )
 
 func NewColumn(id string, description string, dataType string) Column {
