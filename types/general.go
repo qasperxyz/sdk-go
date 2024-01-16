@@ -2,8 +2,7 @@ package types
 
 type Response struct {
 	Messages []Message `json:"messages"`
-	Columns  []Column  `json:"columns"`
-	Elements []Element `json:"elements"`
+	Data     any       `json:"data"`
 }
 
 type ResponseBuilder struct {
@@ -14,8 +13,7 @@ func NewResponseBuilder() *ResponseBuilder {
 	return &ResponseBuilder{
 		response: Response{
 			Messages: []Message{},
-			Columns:  []Column{},
-			Elements: []Element{},
+			Data:     nil,
 		},
 	}
 }
@@ -25,13 +23,8 @@ func (h *ResponseBuilder) AddMessage(message Message) *ResponseBuilder {
 	return h
 }
 
-func (h *ResponseBuilder) AddColumn(column Column) *ResponseBuilder {
-	h.response.Columns = append(h.response.Columns, column)
-	return h
-}
-
-func (h *ResponseBuilder) AddElement(element Element) *ResponseBuilder {
-	h.response.Elements = append(h.response.Elements, element)
+func (h *ResponseBuilder) AddData(data interface{}) *ResponseBuilder {
+	h.response.Data = data
 	return h
 }
 
