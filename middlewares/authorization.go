@@ -82,8 +82,9 @@ func AuthorizationMiddleware(c *gin.Context) {
 	} else {
 		// create dummy userSession
 		userSession := types.Session{
-			Id:       uuid.New().String(),
-			Username: "admin",
+			Id:     uuid.New().String(),
+			UserId: uuid.New().String(),
+			Email:  "",
 		}
 		// set token data to context
 		c.Set(types.USER_SESSION_CONTEXT_KEY, userSession)
